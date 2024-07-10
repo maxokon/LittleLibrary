@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Little Library</title>
+    <!--BOOTSTRAP-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!--NAVIGATION-->
+    <nav class="nav-bar text-center">
+      <h1>Little Library</h1>
+    </nav>
+
+    <!--FORM: ADD
+        Allows to add books-->
+    <div class="container mt-4">
+      <h4>Add a book to your collection</h4>
+      <form>
+        <!--FORM: Title-->
+        <div class="form-divs">
+          <label for="title">Title</label><br />
+          <input type="text" id="title" name="title" class="form-design" />
+        </div>
+
+        <!--FORM: Author-->
+        <div class="form-divs">
+          <label for="author">Author</label><br />
+          <input type="text" id="author" name="author" class="form-design" />
+        </div>
+
+        <!--FORM: Ownership-->
+        <div class="form-divs">
+          <p>Owned or borrowed</p>
+          <input type="radio" id="owned" name="ownership" class="form-design" />
+          <label for="owned">I own this book</label><br />
+          <input
+            type="radio"
+            id="borrowed"
+            name="ownership"
+            class="form-design"
+          />
+          <label for="borrowed">I borrowed this book</label>
+        </div>
+
+        <!--FORM: Reading Status-->
+        <div class="form-divs">
+          <p>Reading status</p>
+          <input
+            type="radio"
+            id="finished"
+            name="reading"
+            class="form-design"
+          />
+          <label for="finished">Finished</label><br />
+          <input
+            type="radio"
+            id="unfinished"
+            name="reading"
+            class="form-design"
+          />
+          <label for="unfinished">Unfinished</label>
+        </div>
+
+        <!--FORM: Rating, uses UTF-8 symbols for stars
+                &#9733; is a black star,
+                &#9734; is a white star-->
+        <div class="form-divs">
+          <p>Rating</p>
+          <input type="radio" id="star-one" name="rating" class="form-design" />
+          <label for="star-one">&#9733;&#9734;&#9734;&#9734;&#9734;</label
+          ><br />
+          <input type="radio" id="star-two" name="rating" class="form-design" />
+          <label for="star-two">&#9733;&#9733;&#9734;&#9734;&#9734;</label
+          ><br />
+          <input
+            type="radio"
+            id="star-three"
+            name="rating"
+            class="form-design"
+          />
+          <label for="star-three">&#9733;&#9733;&#9733;&#9734;&#9734;</label
+          ><br />
+          <input
+            type="radio"
+            id="star-four"
+            name="rating"
+            class="form-design"
+          />
+          <label for="star-four">&#9733;&#9733;&#9733;&#9733;&#9734;</label
+          ><br />
+          <input
+            type="radio"
+            id="star-five"
+            name="rating"
+            class="form-design"
+          />
+          <label for="star-five">&#9733;&#9733;&#9733;&#9733;&#9733;</label
+          ><br />
+          <input type="radio" id="none" name="rating" class="form-design" />
+          <label for="unfinished">None</label>
+        </div>
+
+        <!--FORM: Submit button-->
+        <button class="btn btn-success form-design">Add</button>
+      </form>
+    </div>
+
+    <!--BOOTSTRAP-->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
