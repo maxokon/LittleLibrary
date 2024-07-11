@@ -1,0 +1,20 @@
+body {
+background-color: #f9f4ea;
+color: #605f4b;
+}
+.nav-bar {
+color: #605f4b;
+}
+
+.form-divs {
+    margin-bottom: 2em;
+}
+
+.addBooks {
+    padding: 2em;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #605f4b;
+    border-radius: 2em;
+
+}

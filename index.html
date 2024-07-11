@@ -22,95 +22,151 @@
     <!--FORM: ADD
         Allows to add books-->
     <div class="container mt-4">
-      <h4>Add a book to your collection</h4>
-      <form>
-        <!--FORM: Title-->
-        <div class="form-divs">
-          <label for="title">Title</label><br />
-          <input type="text" id="title" name="title" class="form-design" />
+      <div class="row">
+        <div class="addBooks col-md-4">
+          <h4>Add a book to your collection</h4>
+          <form>
+            <!--FORM: Title-->
+            <div class="form-divs">
+              <label for="title">Title</label><br />
+              <input
+                type="text"
+                id="title"
+                name="title"
+                class="form-control"
+                required
+              />
+            </div>
+
+            <!--FORM: Author-->
+            <div class="form-divs">
+              <label for="author">Author</label><br />
+              <input
+                type="text"
+                id="author"
+                name="author"
+                class="form-control"
+                required
+              />
+            </div>
+
+            <!--FORM: Ownership-->
+            <div class="form-divs">
+              <p>Owned or borrowed</p>
+              <input
+                type="radio"
+                id="owned"
+                name="ownership"
+                value="owned"
+                class="form-radio"
+              />
+              <label for="owned">I own this book</label><br />
+              <input
+                type="radio"
+                id="borrowed"
+                name="ownership"
+                value="borrowed"
+                class="form-radio"
+              />
+              <label for="borrowed">I borrowed this book</label>
+            </div>
+
+            <!--FORM: Reading Status-->
+            <div class="form-divs">
+              <p>Reading status</p>
+              <input
+                type="radio"
+                id="finished"
+                name="reading"
+                value="finished"
+                class="form-radio"
+              />
+              <label for="finished">Finished</label><br />
+              <input
+                type="radio"
+                id="unfinished"
+                name="reading"
+                value="unfinished"
+                class="form-radio"
+              />
+              <label for="unfinished">Unfinished</label>
+            </div>
+
+            <!--FORM: Rating, uses UTF-8 symbols for stars
+                        &#9733; is a black star,
+                        &#9734; is a white star-->
+            <div class="form-divs">
+              <p>Rating</p>
+              <input
+                type="radio"
+                id="star-one"
+                name="rating"
+                value="&#9733;&#9734;&#9734;&#9734;&#9734;"
+                class="form-radio"
+              />
+              <label for="star-one">&#9733;&#9734;&#9734;&#9734;&#9734;</label
+              ><br />
+              <input
+                type="radio"
+                id="star-two"
+                name="rating"
+                value="&#9733;&#9733;&#9734;&#9734;&#9734;"
+                class="form-radio"
+              />
+              <label for="star-two">&#9733;&#9733;&#9734;&#9734;&#9734;</label
+              ><br />
+              <input
+                type="radio"
+                id="star-three"
+                name="rating"
+                value="&#9733;&#9733;&#9733;&#9734;&#9734;"
+                class="form-radio"
+              />
+              <label for="star-three">&#9733;&#9733;&#9733;&#9734;&#9734;</label
+              ><br />
+              <input
+                type="radio"
+                id="star-four"
+                name="rating"
+                value="&#9733;&#9733;&#9733;&#9733;&#9734;"
+                class="form-radio"
+              />
+              <label for="star-four">&#9733;&#9733;&#9733;&#9733;&#9734;</label
+              ><br />
+              <input
+                type="radio"
+                id="star-five"
+                name="rating"
+                value="&#9733;&#9733;&#9733;&#9733;&#9733;"
+                class="form-radio"
+              />
+              <label for="star-five">&#9733;&#9733;&#9733;&#9733;&#9733;</label
+              ><br />
+              <input type="radio" id="none" name="rating" class="form-radio" />
+              <label for="unfinished">None</label>
+            </div>
+
+            <!--FORM: review-->
+            <div class="form-divs">
+              <label for="review">Review</label>
+              <textarea
+                class="form-control"
+                rows="3"
+                id="review"
+                name="review"
+                placeholder="Share your thoughts here"
+                autocorrect="on"
+              ></textarea>
+            </div>
+
+            <!--FORM: Submit button-->
+            <button class="btn btn-success form-control">Add</button>
+          </form>
         </div>
 
-        <!--FORM: Author-->
-        <div class="form-divs">
-          <label for="author">Author</label><br />
-          <input type="text" id="author" name="author" class="form-design" />
-        </div>
-
-        <!--FORM: Ownership-->
-        <div class="form-divs">
-          <p>Owned or borrowed</p>
-          <input type="radio" id="owned" name="ownership" class="form-design" />
-          <label for="owned">I own this book</label><br />
-          <input
-            type="radio"
-            id="borrowed"
-            name="ownership"
-            class="form-design"
-          />
-          <label for="borrowed">I borrowed this book</label>
-        </div>
-
-        <!--FORM: Reading Status-->
-        <div class="form-divs">
-          <p>Reading status</p>
-          <input
-            type="radio"
-            id="finished"
-            name="reading"
-            class="form-design"
-          />
-          <label for="finished">Finished</label><br />
-          <input
-            type="radio"
-            id="unfinished"
-            name="reading"
-            class="form-design"
-          />
-          <label for="unfinished">Unfinished</label>
-        </div>
-
-        <!--FORM: Rating, uses UTF-8 symbols for stars
-                &#9733; is a black star,
-                &#9734; is a white star-->
-        <div class="form-divs">
-          <p>Rating</p>
-          <input type="radio" id="star-one" name="rating" class="form-design" />
-          <label for="star-one">&#9733;&#9734;&#9734;&#9734;&#9734;</label
-          ><br />
-          <input type="radio" id="star-two" name="rating" class="form-design" />
-          <label for="star-two">&#9733;&#9733;&#9734;&#9734;&#9734;</label
-          ><br />
-          <input
-            type="radio"
-            id="star-three"
-            name="rating"
-            class="form-design"
-          />
-          <label for="star-three">&#9733;&#9733;&#9733;&#9734;&#9734;</label
-          ><br />
-          <input
-            type="radio"
-            id="star-four"
-            name="rating"
-            class="form-design"
-          />
-          <label for="star-four">&#9733;&#9733;&#9733;&#9733;&#9734;</label
-          ><br />
-          <input
-            type="radio"
-            id="star-five"
-            name="rating"
-            class="form-design"
-          />
-          <label for="star-five">&#9733;&#9733;&#9733;&#9733;&#9733;</label
-          ><br />
-          <input type="radio" id="none" name="rating" class="form-design" />
-          <label for="unfinished">None</label>
-        </div>
-
-        <!--FORM: Submit button-->
-        <button class="btn btn-success form-design">Add</button>
-      </form>
+        <!--BOOK TABLE: 
+            Displays books added-->
+      </div>
     </div>
 
     <!--BOOTSTRAP-->
@@ -119,5 +175,6 @@
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
+    <script src="main.js"></script>
   </body>
 </html>
