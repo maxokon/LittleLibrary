@@ -4,6 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Little Library</title>
+    <!--jQuery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
     <!--BOOTSTRAP-->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
@@ -51,29 +54,29 @@
             </div>
 
             <!--FORM: Ownership-->
-            <div class="form-group">
+            <div class="form-check" id="ownershipID">
               <br />
               <p>Owned or borrowed</p>
               <input
                 type="radio"
                 id="owned"
                 name="ownership"
-                value="owned"
-                class="form-radio"
+                value="Owned"
+                class="form-check-input"
               />
-              <label for="owned">Owned</label><br />
+              <label for="owned" class="form-check-label">Owned</label><br />
               <input
                 type="radio"
                 id="borrowed"
                 name="ownership"
-                value="borrowed"
-                class="form-radio"
+                value="Borrowed"
+                class="form-check-input"
               />
-              <label for="borrowed">Borrowed</label>
+              <label for="borrowed" class="form-check-label">Borrowed</label>
             </div>
 
             <!--FORM: Reading Status-->
-            <div class="form-group">
+            <div class="form-check" id="readingID">
               <br />
               <p>Reading status</p>
               <input
@@ -81,84 +84,99 @@
                 id="finished"
                 name="reading"
                 value="finished"
-                class="form-radio"
+                class="form-check-input"
               />
               <label for="finished">Finished</label><br />
               <input
                 type="radio"
                 id="unfinished"
                 name="reading"
-                value="unfinished"
-                class="form-radio"
+                value="Unfinished"
+                class="form-check-input"
               />
-              <label for="unfinished">Unfinished</label><br />
+              <label for="unfinished" class="form-check-label">Unfinished</label
+              ><br />
               <input
                 type="radio"
                 id="notStarted"
-                name="notStrated"
+                name="reading"
                 value="Not started"
-                class="form-radio"
+                class="form-check-input"
               />
-              <label for="notStarted">Not started</label>
+              <label for="notStarted" class="form-check-label"
+                >Not started</label
+              >
             </div>
 
             <!--FORM: Rating, uses UTF-8 symbols for stars
                         &#9733; is a black star,
                         &#9734; is a white star-->
-            <div class="form-group">
+            <div class="form-check" id="ratingID">
+              <br/ >
               <p>Rating</p>
               <input
                 type="radio"
                 id="star-one"
                 name="rating"
                 value="&#9733;&#9734;&#9734;&#9734;&#9734;"
-                class="form-radio"
+                class="form-check-input"
               />
-              <label for="star-one">&#9733;&#9734;&#9734;&#9734;&#9734;</label
+              <label for="star-one" class="form-check-label"
+                >&#9733;&#9734;&#9734;&#9734;&#9734;</label
               ><br />
               <input
                 type="radio"
                 id="star-two"
                 name="rating"
                 value="&#9733;&#9733;&#9734;&#9734;&#9734;"
-                class="form-radio"
+                class="form-check-input"
               />
-              <label for="star-two">&#9733;&#9733;&#9734;&#9734;&#9734;</label
+              <label for="star-two" class="form-check-label"
+                >&#9733;&#9733;&#9734;&#9734;&#9734;</label
               ><br />
               <input
                 type="radio"
                 id="star-three"
                 name="rating"
                 value="&#9733;&#9733;&#9733;&#9734;&#9734;"
-                class="form-radio"
+                class="form-check-input"
               />
-              <label for="star-three">&#9733;&#9733;&#9733;&#9734;&#9734;</label
+              <label for="star-three" class="form-check-label"
+                >&#9733;&#9733;&#9733;&#9734;&#9734;</label
               ><br />
               <input
                 type="radio"
                 id="star-four"
                 name="rating"
                 value="&#9733;&#9733;&#9733;&#9733;&#9734;"
-                class="form-radio"
+                class="form-check-input"
               />
-              <label for="star-four">&#9733;&#9733;&#9733;&#9733;&#9734;</label
+              <label for="star-four" class="form-check-label"
+                >&#9733;&#9733;&#9733;&#9733;&#9734;</label
               ><br />
               <input
                 type="radio"
                 id="star-five"
                 name="rating"
                 value="&#9733;&#9733;&#9733;&#9733;&#9733;"
-                class="form-radio"
+                class="form-check-input"
               />
-              <label for="star-five">&#9733;&#9733;&#9733;&#9733;&#9733;</label
+              <label for="star-five" class="form-check-label"
+                >&#9733;&#9733;&#9733;&#9733;&#9733;</label
               ><br />
-              <input type="radio" id="none" name="rating" class="form-radio" />
-              <label for="unfinished">None</label>
+              <input
+                type="radio"
+                id="none"
+                name="rating"
+                value="None"
+                class="form-check-input"
+              />
+              <label for="unfinished" class="form-check-label">None</label>
             </div>
 
             <!--FORM: review-->
             <div class="form-group">
-              <label for="review">Review</label>
+              <br /><label for="review">Review</label>
               <textarea
                 class="form-control"
                 rows="3"
@@ -176,7 +194,7 @@
 
         <!--BOOK TABLE: 
             Displays books added-->
-        <div class="displayBooks col-md-12 col-lg-5">
+        <div class="displayBooks col-md-12 col-lg-7">
           <h2 class="text-center">Books</h2>
           <table class="table">
             <thead>
@@ -189,17 +207,7 @@
               <th>Remove</th>
             </thead>
 
-            <tbody id="tbodyID">
-              <tr>
-                <td>Interview with the Vampire</td>
-                <td>Anne Rice</td>
-                <td>Owned</td>
-                <td>Not started</td>
-                <td>None</td>
-                <td>test</td>
-                <td class="btn btn-danger">Remove</td>
-              </tr>
-            </tbody>
+            <tbody id="tbodyID"></tbody>
           </table>
         </div>
       </div>
