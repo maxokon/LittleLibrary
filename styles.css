@@ -1,9 +1,9 @@
 body {
-background-color: #f9f4ea;
-color: #605f4b;
+    background-color: #f9f4ea;
+    color: #605f4b;
 }
 .nav-bar {
-color: #605f4b;
+    color: #605f4b;
 }
 
 .addBooks {
@@ -13,4 +13,8 @@ color: #605f4b;
     border-color: #605f4b;
     border-radius: 2em;
 
+}
+
+#updateBTN {
+    display: none;
 }

@@ -1,10 +1,10 @@
-//Adding books
 const addBooksForm = document.getElementById("addBooksForm");
 const table = document.getElementById("tbodyID");
 
+//function to get book entries from the form and adding them to local storage
 function addBooksFormHalndler(e) {
   e.preventDefault();
-  let dateID = Date.now;
+  let dateID = Date.now();
   let titleTag = document.getElementById("title");
   let authorTag = document.getElementById("author");
   let ownershipTag = $("#ownershipID input:radio:checked").val();
@@ -19,6 +19,7 @@ function addBooksFormHalndler(e) {
   let tdReadingStatusTag = document.createElement("td");
   let tdRatingTag = document.createElement("td");
   let tdReviewTag = document.createElement("td");
+  let tdEditTag = document.createElement("td");
   let tdDeleteTag = document.createElement("td");
 
   tdTitleTag.innerText = titleTag.value;
@@ -27,7 +28,8 @@ function addBooksFormHalndler(e) {
   tdReadingStatusTag.innerText = readingStatusTag;
   tdRatingTag.innerText = ratingTag;
   tdReviewTag.innerText = reviewTag;
-  tdDeleteTag.innerHTML = `<button class="btn btn-danger" id=${dateID} onclick="this.parentElement.parentElement.remove()" >Remove</button>`;
+  tdEditTag.innerHTML = `<button class="btn btn-info" id=${dateID} onclick="editBook(this)" >Edit</button>`;
+  tdDeleteTag.innerHTML = `<button class="btn btn-danger" id=${dateID} onclick="removeBook(this)" >Remove</button>`;
 
   trTag.appendChild(tdTitleTag);
   trTag.appendChild(tdAuthorTag);
@@ -35,9 +37,12 @@ function addBooksFormHalndler(e) {
   trTag.appendChild(tdReadingStatusTag);
   trTag.appendChild(tdRatingTag);
   trTag.appendChild(tdReviewTag);
+  trTag.appendChild(tdEditTag);
   trTag.appendChild(tdDeleteTag);
 
   table.append(trTag);
+
+  addBooksForm.reset();
 
   //Local Storage
   let library = [];
@@ -61,13 +66,39 @@ function addBooksFormHalndler(e) {
 }
 
 //delete function
-/*
-function (e) {
+function removeBook(e) {
   const getID = e.id;
+  //deletes a tr tag from users side
+  e.parentElement.parentElement.remove();
+
+  //deletes from local storage
+  let library = JSON.parse(localStorage.getItem("bookEntry"));
+  let updatedLibrary = library.filter((book) => {
+    if (book.id != getID) {
+      return book;
+    }
+  });
+
+  localStorage.setItem("bookEntry", JSON.stringify(updatedLibrary));
 }
-*/
+
+//edit function
+function editBook(e) {
+  document.getElementById("submitBTN").style.display = "none";
+  document.getElementById("updateBTN").style.display = "block";
+
+  document.getElementById("title").value =
+    e.parentElement.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.innerHTML;
+
+  document.getElementById("author").value =
+    e.parentElement.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.previousElementSibling.innerHTML;
+
+  document.getElementById("review").value =
+    e.parentElement.previousElementSibling.innerHTML;
+}
 
 addBooksForm.addEventListener("submit", addBooksFormHalndler);
+addBooksForm.reset();
 
 //loading the book entries
 window.onload = function () {
@@ -83,6 +114,7 @@ window.onload = function () {
       let tdReadingStatusTag = document.createElement("td");
       let tdRatingTag = document.createElement("td");
       let tdReviewTag = document.createElement("td");
+      let tdEditTag = document.createElement("td");
       let tdDeleteTag = document.createElement("td");
 
       tdTitleTag.innerText = book.title;
@@ -91,7 +123,8 @@ window.onload = function () {
       tdReadingStatusTag.innerText = book.reading_status;
       tdRatingTag.innerText = book.rating;
       tdReviewTag.innerText = book.review;
-      tdDeleteTag.innerHTML = `<button class="btn btn-danger" id=${book.id} onclick="this.parentElement.parentElement.remove()" >Remove</button>`;
+      tdEditTag.innerHTML = `<button class="btn btn-info" id=${book.id} onclick="editBook(this)" >Edit</button>`;
+      tdDeleteTag.innerHTML = `<button class="btn btn-danger" id=${book.id} onclick="removeBook(this)" >Remove</button>`;
 
       trTag.appendChild(tdTitleTag);
       trTag.appendChild(tdAuthorTag);
@@ -99,6 +132,7 @@ window.onload = function () {
       trTag.appendChild(tdReadingStatusTag);
       trTag.appendChild(tdRatingTag);
       trTag.appendChild(tdReviewTag);
+      trTag.appendChild(tdEditTag);
       trTag.appendChild(tdDeleteTag);
 
       table.append(trTag);
