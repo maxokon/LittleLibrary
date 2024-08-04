@@ -20,6 +20,8 @@
     <!--NAVIGATION-->
     <nav class="nav-bar text-center">
       <h1>Little Library</h1>
+      <button type="button" class="btn btn-primary" id="download" onclick="convertToCsv()">Download</button>
+      <button type="button" class="btn btn-warning" id="load" onclick="loadCsv()">Load a File</button> 
     </nav>
 
     <!--FORM: ADD
@@ -118,7 +120,7 @@
                 type="radio"
                 id="star-one"
                 name="rating"
-                value="&#9733;&#9734;&#9734;&#9734;&#9734;"
+                value="1/5 &#9733;&#9734;&#9734;&#9734;&#9734;"
                 class="form-check-input"
               />
               <label for="star-one" class="form-check-label"
@@ -128,7 +130,7 @@
                 type="radio"
                 id="star-two"
                 name="rating"
-                value="&#9733;&#9733;&#9734;&#9734;&#9734;"
+                value="2/5 &#9733;&#9733;&#9734;&#9734;&#9734;"
                 class="form-check-input"
               />
               <label for="star-two" class="form-check-label"
@@ -138,7 +140,7 @@
                 type="radio"
                 id="star-three"
                 name="rating"
-                value="&#9733;&#9733;&#9733;&#9734;&#9734;"
+                value="3/5 &#9733;&#9733;&#9733;&#9734;&#9734;"
                 class="form-check-input"
               />
               <label for="star-three" class="form-check-label"
@@ -148,7 +150,7 @@
                 type="radio"
                 id="star-four"
                 name="rating"
-                value="&#9733;&#9733;&#9733;&#9733;&#9734;"
+                value="4/5 &#9733;&#9733;&#9733;&#9733;&#9734;"
                 class="form-check-input"
               />
               <label for="star-four" class="form-check-label"
@@ -158,7 +160,7 @@
                 type="radio"
                 id="star-five"
                 name="rating"
-                value="&#9733;&#9733;&#9733;&#9733;&#9733;"
+                value="5/5 &#9733;&#9733;&#9733;&#9733;&#9733;"
                 class="form-check-input"
               />
               <label for="star-five" class="form-check-label"
@@ -189,10 +191,6 @@
 
             <!--FORM: Submit button-->
             <button class="btn btn-success form-control" id="submitBTN">Add</button>
-
-            <!--FORM: Update button-->
-            <button class="btn btn-info form-control" id="updateBTN">Update</button>
-
           </form>
         </div>
 
