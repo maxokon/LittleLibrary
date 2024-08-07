@@ -151,8 +151,7 @@ window.onload = function () {
   }
 };
 
-
-//download a csv file
+//download a file
 function downloadFile(blob, filename) {
   const url = window.URL.createObjectURL(blob);
   const a = document.createElement("a");
@@ -161,28 +160,154 @@ function downloadFile(blob, filename) {
   a.download = filename;
   a.click();
 
-  //clearing anchor element 
+  //clearing anchor element
   setTimeout(() => {
     window.URL.revokeObjectURL(url);
     document.body.removeChild(a);
-  }, 0)
-};
+  }, 0);
+}
 
-
- //convert to a flat file
- function convertToCsv() {
+//convert to a csv file
+function convertToCsv() {
   let library = JSON.parse(localStorage.getItem("bookEntry"));
 
-  let csvFile = "ID,TITLE,AUTHOR,OWNERSHIP,READING STATUS,RATING,REVIEW\n"
+  let csvFile = "ID,TITLE,AUTHOR,OWNERSHIP,READING STATUS,RATING,REVIEW\r\n";
 
   library.forEach((book) => {
-    let row = book.id + "," + book.title + "," + book.author + "," + book.ownership + "," + book.readingStatus + "," + book.rating + "," + book.review + "\n"
-    csvFile += row
-  })
+    let row =
+      book.id +
+      "," +
+      book.title +
+      "," +
+      book.author +
+      "," +
+      book.ownership +
+      "," +
+      book.readingStatus +
+      "," +
+      book.rating +
+      "," +
+      book.review +
+      "\r\n";
+    csvFile += row;
+  });
 
-  var entries = new Blob([csvFile], {type: "text/csv"});
+  var entries = new Blob([csvFile], { type: "text/csv" });
 
   downloadFile(entries, "your_library.csv");
-};
+}
 
+//convert to a txt file
+function convertToTxt() {
+  let library = JSON.parse(localStorage.getItem("bookEntry"));
 
+  let txtFile = "ID,TITLE,AUTHOR,OWNERSHIP,READING STATUS,RATING,REVIEW\r\n";
+
+  library.forEach((book) => {
+    let row =
+      book.id +
+      "," +
+      book.title +
+      "," +
+      book.author +
+      "," +
+      book.ownership +
+      "," +
+      book.readingStatus +
+      "," +
+      book.rating +
+      "," +
+      book.review +
+      "\r\n";
+    txtFile += row;
+  });
+
+  var entries = new Blob([txtFile], { type: "text" });
+
+  downloadFile(entries, "your_library.txt");
+}
+
+//convert to a JSON file
+function convertToJSON() {
+  let library = localStorage.getItem("bookEntry");
+  let entries = new Blob([JSON.stringify(library)], {
+    type: "application/json",
+  });
+  downloadFile(entries, "your_library.json");
+}
+
+//reading a file using FileReaderAPI
+file.addEventListener("change", () => {
+  const reader = new FileReader();
+
+  reader.readAsText(file.files[0]);
+  reader.addEventListener("load", () => {
+    const fileInput = reader.result;
+
+    //parse a file
+    let comma = ",";
+    let newLine = "\r\n";
+
+    const fileToArray = fileInput.split(newLine).map((row) => {
+      return row.split(comma);
+    });
+
+    //remove first line as it is not needed
+    const inputArray = fileToArray.slice(1);
+
+    //local storage
+    let fileLibrary = [];
+
+    if (localStorage.getItem("bookEntry")) {
+      fileLibrary = JSON.parse(localStorage.getItem("bookEntry"));
+    }
+
+    inputArray.forEach((row) => {
+      let newBook = {
+        id: row[0],
+        title: row[1],
+        author: row[2],
+        ownership: row[3],
+        readingStatus: row[4],
+        rating: row[5],
+        review: row[6],
+      };
+
+      fileLibrary.push(newBook);
+    });
+
+    localStorage.setItem("bookEntry", JSON.stringify(fileLibrary));
+    window.onload();
+  });
+});
+
+//reading a JSON file
+function loadJSON() {
+  let fileLibrary = [];
+
+  fetch("randomBooks.json")
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (jsonInput) {
+      jsonInput.forEach((book) => {
+        let newBook = {
+          id: `${book.id}`,
+          title: `${book.title}`,
+          author: `${book.author}`,
+          ownership: `${book.ownership}`,
+          readingStatus: `${book.readingStatus}`,
+          rating: `${book.rating}`,
+          review: `${book.review}`,
+        };
+
+        fileLibrary.push(newBook);
+      });
+      localStorage.setItem("bookEntry", JSON.stringify(fileLibrary));
+      window.onload();
+    })
+    .catch(function (error) {
+      console.error("JSON file was not read correctly");
+      console.error(error);
+    });
+}

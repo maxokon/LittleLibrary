@@ -1,0 +1,245 @@
+[
+    {
+      "id": 1,
+      "title": "Interview with the Vampire",
+      "author": "Anne Rice",
+      "ownership": "",
+      "readingStatus": "",
+      "rating": "",
+      "review": ""
+    },
+    {
+      "id": 2,
+      "title": "Hello Beautiful",
+      "author": "Ann Neapolitano",
+      "ownership": "",
+      "readingStatus": "",
+      "rating": "",
+      "review": ""
+    },
+    {
+      "id": 3,
+      "title": "In the Lives of Puppets",
+      "author": "T.J. Klune",
+      "ownership": "",
+      "readingStatus": "",
+      "rating": "",
+      "review": ""
+    },
+    {
+      "id": 4,
+      "title": "Pride and Prejudice",
+      "author": "Jane Austen",
+      "ownership": "",
+      "readingStatus": "",
+      "rating": "",
+      "review": ""
+    },
+    {
+      "id": 5,
+      "title": "The Great Gatsby",
+      "author": "F. Scott Fitzgerald",
+      "ownership": "",
+      "readingStatus": "",
+      "rating": "",
+      "review": ""
+    },
+    {
+      "id": 6,
+      "title": "Punished for Dreaming",
+      "author": "Bettina L. Love",
+      "ownership": "",
+      "readingStatus": "",
+      "rating": "",
+      "review": ""
+    },
+    {
+      "id": 7,
+      "title": "In Cold Blood",
+      "author": "Truman Capote",
+      "ownership": "",
+      "readingStatus": "",
+      "rating": "",
+      "review": ""
+    },
+    {
+      "id": 8,
+      "title": "Wide Sargasso Sea",
+      "author": "Jean Rhys",
+      "ownership": "",
+      "readingStatus": "",
+      "rating": "",
+      "review": ""
+    },
+    {
+      "id": 9,
+      "title": "Lessons in Chemistry",
+      "author": "Aldous Huxley",
+      "ownership": "",
+      "readingStatus": "",
+      "rating": "",
+      "review": ""
+    },
+    {
+      "id": 10,
+      "title": "Jane Eyre",
+      "author": "Charlotte Bronte",
+      "ownership": "",
+      "readingStatus": "",
+      "rating": "",
+      "review": ""
+    },
+    {
+      "id": 11,
+      "title": "Crime and Punishment",
+      "author": "Fyodor Dostoevsky",
+      "ownership": "",
+      "readingStatus": "",
+      "rating": "",
+      "review": ""
+    },
+    {
+      "id": 12,
+      "title": "The Secret History",
+      "author": "Donna Tartt",
+      "ownership": "",
+      "readingStatus": "",
+      "rating": "",
+      "review": ""
+    },
+    {
+      "id": 13,
+      "title": "The Call of the Wild",
+      "author": "Jack London",
+      "ownership": "",
+      "readingStatus": "",
+      "rating": "",
+      "review": ""
+    },
+    {
+      "id": 14,
+      "title": "Persuasion",
+      "author": "Jane Austen",
+      "ownership": "",
+      "readingStatus": "",
+      "rating": "",
+      "review": ""
+    },
+    {
+      "id": 15,
+      "title": "Les Miserables",
+      "author": "Victor Hugo",
+      "ownership": "",
+      "readingStatus": "",
+      "rating": "",
+      "review": ""
+    },
+    {
+      "id": 16,
+      "title": "Frankenstein",
+      "author": "Mary Shelley",
+      "ownership": "",
+      "readingStatus": "",
+      "rating": "",
+      "review": ""
+    },
+    {
+      "id": 17,
+      "title": "The Master and Margarita",
+      "author": "Mikhail Bulgakov",
+      "ownership": "",
+      "readingStatus": "",
+      "rating": "",
+      "review": ""
+    },
+    {
+      "id": 18,
+      "title": "The Iliad",
+      "author": "Homer",
+      "ownership": "",
+      "readingStatus": "",
+      "rating": "",
+      "review": ""
+    },
+    {
+      "id": 19,
+      "title": "The Hobbit",
+      "author": "J.R.R. Tolkien",
+      "ownership": "",
+      "readingStatus": "",
+      "rating": "",
+      "review": ""
+    },
+    {
+      "id": 20,
+      "title": "The Fellowship of the Ring",
+      "author": "J.R.R. Tolkien",
+      "ownership": "",
+      "readingStatus": "",
+      "rating": "",
+      "review": ""
+    },
+    {
+      "id": 21,
+      "title": "The Color of Magic",
+      "author": "Terry Pratchett",
+      "ownership": "",
+      "readingStatus": "",
+      "rating": "",
+      "review": ""
+    },
+    {
+      "id": 22,
+      "title": "Howls Moving Castle",
+      "author": "Diana Wynne Jones",
+      "ownership": "",
+      "readingStatus": "",
+      "rating": "",
+      "review": ""
+    },
+    {
+      "id": 23,
+      "title": "The Buried Giant",
+      "author": "Kazuo Ishiguro",
+      "ownership": "",
+      "readingStatus": "",
+      "rating": "",
+      "review": ""
+    },
+    {
+      "id": 24,
+      "title": "American Gods",
+      "author": "Neil Gaiman",
+      "ownership": "",
+      "readingStatus": "",
+      "rating": "",
+      "review": ""
+    },
+    {
+      "id": 25,
+      "title": "Solaris",
+      "author": "Stanislaw Lem",
+      "ownership": "",
+      "readingStatus": "",
+      "rating": "",
+      "review": ""
+    },
+    {
+      "id": 26,
+      "title": "Neuromancer",
+      "author": "William Gibson",
+      "ownership": "",
+      "readingStatus": "",
+      "rating": "",
+      "review": ""
+    },
+    {
+      "id": 27,
+      "title": "Dune",
+      "author": "Frank Herbert",
+      "ownership": "",
+      "readingStatus": "",
+      "rating": "",
+      "review": ""
+    }
+]
