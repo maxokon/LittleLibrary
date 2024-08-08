@@ -14,19 +14,27 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
+
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap"
+      rel="stylesheet"
+    />
+
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <!--NAVIGATION-->
+    <header class="text-center"><h1>Little Library</h1></header>
     <nav class="nav-bar text-center">
-      <h1>Little Library</h1>
       <button
         type="button"
         class="btn btn-primary"
         id="download"
         onclick="convertToCsv()"
       >
-        Download .CSV
+        SAVE .CSV
       </button>
 
       <button
@@ -35,7 +43,7 @@
         id="downloadTXT"
         onclick="convertToTxt()"
       >
-        Download .TXT
+        SAVE .TXT
       </button>
 
       <button
@@ -44,20 +52,29 @@
         id="downloadJSON"
         onclick="convertToJSON()"
       >
-        Download .JSON
+        SAVE .JSON
       </button>
 
       <button
-      type="button"
-      class="btn btn-primary"
-      id="loadJSON"
-      onclick="loadJSON()"
-    >
-      Load a JSON file
-    </button>
-    
-      <label for="file">Load a file:</label>
-      <input type="file" id="file" name="file" accept=".txt, .csv" />
+        type="button"
+        class="btn btn-primary"
+        id="loadJSON"
+        onclick="loadJSON()"
+      >
+        Load a JSON file
+      </button>
+
+      <br />
+      <div class="inputLabelDiv">
+        <label for="file" class="inputLabel">Load a file: </label>
+        <input
+          type="file"
+          id="file"
+          class="inputLabel"
+          name="file"
+          accept=".txt, .csv"
+        />
+      </div>
     </nav>
 
     <!--FORM: ADD
@@ -65,10 +82,10 @@
     <div class="container mt-4">
       <div class="row">
         <div class="addBooks col-md-12 col-lg-5">
-          <h2 class="text-center">Add a book to your collection</h2>
+          <h2 class="text-center">ADD A BOOK TO YOUR COLLECTION</h2>
           <form id="addBooksForm">
             <!--FORM: Title-->
-            <div class="form-group">
+            <div class="form-group" id="titleID">
               <label for="title">Title</label>
               <input
                 type="text"
@@ -80,7 +97,7 @@
             </div>
 
             <!--FORM: Author-->
-            <div class="form-group">
+            <div class="form-group" id="authorID">
               <label for="author">Author</label>
               <input
                 type="text"
@@ -94,7 +111,7 @@
             <!--FORM: Ownership-->
             <div class="form-check" id="ownershipID">
               <br />
-              <p>Owned or borrowed</p>
+              <p class="pName">Owned or borrowed</p>
               <input
                 type="radio"
                 id="owned"
@@ -116,7 +133,7 @@
             <!--FORM: Reading Status-->
             <div class="form-check" id="readingID">
               <br />
-              <p>Reading status</p>
+              <p class="pName">Reading status</p>
               <input
                 type="radio"
                 id="finished"
@@ -151,7 +168,7 @@
                         &#9734; is a white star-->
             <div class="form-check" id="ratingID">
               <br/ >
-              <p>Rating</p>
+              <p class="pName">Rating</p>
               <input
                 type="radio"
                 id="star-one"
@@ -213,7 +230,7 @@
             </div>
 
             <!--FORM: review-->
-            <div class="form-group">
+            <div class="form-group" id="reviewID">
               <br /><label for="review">Review</label>
               <textarea
                 class="form-control"
@@ -226,12 +243,8 @@
             </div>
 
             <!--FORM: Submit button-->
-            <button
-              type="submit"
-              class="btn btn-success form-control"
-              id="submitBTN"
-            >
-              Add
+            <button type="submit" class="btn btn-success" id="submitBTN">
+              ADD
             </button>
           </form>
         </div>
@@ -239,8 +252,7 @@
         <!--BOOK TABLE: 
             Displays books added-->
         <div class="displayBooks col-md-12 col-lg-7">
-          <h2 class="text-center">Books</h2>
-          <table class="table">
+          <table class="table table-hover">
             <thead>
               <th>Title</th>
               <th>Author</th>
